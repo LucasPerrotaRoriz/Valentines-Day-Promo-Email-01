@@ -27,8 +27,14 @@
 		sup { font-size: 100% !important; }
 	</style>
 	<![endif]-->
-	
 
+    <!--[if gte mso 9]>
+	<style type="text/css" media="all">
+        table, tr, td {border-collapse: collapse}
+        tr {font-size: 0px; line-height: 0px: border-collapse: collapse}
+	</style>
+	<![endif]-->
+	
 	<style type="text/css" media="screen">
 		/* What it does: Tells the email client that both light and dark styles are provided. A duplicate of meta color-scheme meta tag above. */
         :root {
@@ -72,12 +78,20 @@
 		padding: 0 !important;
 		}
 
+        br {
+            display: block !important;
+            margin: 10px 0 0 !important;
+            line-height: 22px !important;
+        }
+
 		/* What it does: Stops Outlook from adding extra spacing to tables. */
 		table,
 		td {
 			mso-table-lspace: 0pt !important;
 			mso-table-rspace: 0pt !important;
 		}
+
+        
 
 		/* What it does: Replaces default bold style. */
 		th {
@@ -125,7 +139,6 @@
 
 		/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
 		/* Create one of these media queries for each additional viewport size you'd like to fix */
-
 		.mcnPreviewText { display: none !important; }
 		
 		/* Mobile styles */
@@ -172,6 +185,8 @@
 			.p30-15 { padding: 30px 15px !important; }
 
 			.p30-15-0 { padding: 30px 15px 0px 15px !important; }
+
+            .pt-20 { padding-top: 20px !important;}
 
 			.pt-30 { padding-top: 30px !important;}
 
@@ -354,7 +369,7 @@
                                                 <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                                         <tr>
-                                                            <td class="center" style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                            <td class="center pb-20" style="font-size: 0pt; line-height: 0pt; text-align: center;">
                                                                 <img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/img-1.png?raw=true" 
                                                                 width="300" height="300" border="0" alt="">
                                                             </td>
@@ -385,7 +400,7 @@
                                                 <td style="padding: 20px 0;">
                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                                         <tr>
-                                                            <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                            <td style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 20px;">
                                                                 <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-2.png?raw=true" 
                                                                 width="101" height="101" border="0" alt="">
                                                             </td>
@@ -424,30 +439,31 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 18px; line-height: 22px; padding-bottom: 10px; color: #620C26;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 18px; line-height: 22px; text-align: center; 
+                                                                        color: #620C26;">
                                                                             <h3>
-                                                                                Entree
+                                                                                Entree&nbsp;
                                                                             </h3>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; color: #62530B;">
                                                                             <p>
-                                                                                Creamy tomato soup
+                                                                                Creamy tomato soup&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; color: #62530B;">
                                                                             <p>
-                                                                                Baby greens salad
+                                                                                Baby greens salad&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; color: #62530B;">
                                                                             <p>
-                                                                                Seared scallops 
+                                                                                Seared scallops&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
@@ -467,30 +483,33 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 18px; line-height: 22px; padding-bottom: 10px; color: #620C26;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 18px; line-height: 22px; text-align: center;
+                                                                        color: #620C26;">
                                                                             <h3>
-                                                                                Main
+                                                                                Main&nbsp;
                                                                             </h3>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
+                                                                        color: #62530B;">
                                                                             <p>
-                                                                                Filet mignon
+                                                                                Filet mignon&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
+                                                                        color: #62530B;">
                                                                             <p>
-                                                                                Mushroom risotto
+                                                                                Mushroom risotto&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; color: #62530B;">
                                                                             <p>
-                                                                                Pan-seared salmon
+                                                                                Pan-seared salmon&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
@@ -510,30 +529,34 @@
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 18px; line-height: 22px; padding-bottom: 10px; color: #620C26;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 18px; line-height: 22px; text-align: center; 
+                                                                        color: #620C26;">
                                                                             <h3>
-                                                                                Dessert
+                                                                                Dessert&nbsp;
                                                                             </h3>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
+                                                                        color: #62530B;">
                                                                             <p>
-                                                                                Chocolate lava cake
+                                                                                Chocolate lava cake&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
+                                                                        color: #62530B;">
                                                                             <p>
-                                                                                Cheesecake
+                                                                                Cheesecake&nbsp;
                                                                             </p>
                                                                         </td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; color: #62530B;">
+                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
+                                                                        color: #62530B;">
                                                                             <p>
-                                                                                Crème brûlée 
+                                                                                Crème brûlée&nbsp; 
                                                                             </p>
                                                                         </td>
                                                                     </tr>
@@ -560,7 +583,7 @@
                         <td align="center">
                             <table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#FFE9E9" class="mobile-shell">
                                 <tr>
-                                    <td class="td" style="width: 100%; min-width: 100%; font-size: 0pt; line-height: 0pt; margin: 0; padding: 20px 0; Margin: 0">
+                                    <td class="td" style="width: 100%; min-width: 100%; font-size: 0pt; line-height: 0pt; margin: 0; padding: 20px 10px; Margin: 0">
                                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                             <tr>
                                                 <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
@@ -626,7 +649,7 @@
                                                 <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
                                                     <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                                         <tr>
-                                                            <td class="center" style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                            <td class="center pt-20" style="font-size: 0pt; line-height: 0pt; text-align: center;">
                                                                 <img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/img-2.png?raw=true" 
                                                                 width="300" height="300" border="0" alt="">
                                                             </td>
@@ -673,7 +696,7 @@
                                                                     </tr>
                                                                     <!-- Button : BEGIN -->
                                                                     <tr>
-                                                                        <td align="center" style="padding-bottom: 20px;">
+                                                                        <td align="center">
                                                                             <table cellpadding="0" cellspacing="0" border="0">
                                                                                 <tr>
                                                                                     <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 

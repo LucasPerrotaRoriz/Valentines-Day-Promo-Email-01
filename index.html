@@ -82,7 +82,7 @@
 
         /* What it does: Replaces default bold style. */
         th {
-        	font-weight: normal;
+            font-weight: normal;
         }
 
         /* What it does: Fixes webkit padding issue. */
@@ -93,15 +93,15 @@
             margin: 0 auto !important;
         }
 
-				h1, h2, h3, h4 {
-					margin: 0 !important;
-					padding: 0 !important;
-				}
+        h1, h2, h3, h4 {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-				p {
-					margin: 0 !important;
-					padding: 0 !important;
-				}
+        p {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
         /* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
         a {
@@ -181,7 +181,7 @@
 	        border-color: #555555 !important;
 	    }
 
-     @media only screen and (max-device-width:480px), only screen and (max-width:480px) {
+        @media only screen and (max-device-width:480px), only screen and (max-width:480px) {
 			.mobile-shell { width: 100% !important; min-width: 100% !important; }
 			
 			.m-center { text-align: center !important; }
@@ -286,7 +286,42 @@
 			.column-empty2 { padding-bottom: 30px !important; }
 
 			.content-spacing { width: 15px !important; }
-		}
+
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability */
+            .email-container p {
+                font-size: 17px !important;
+            }
+        }
 
         /* Dark Mode Styles : BEGIN */
         @media (prefers-color-scheme: dark) {
@@ -328,560 +363,482 @@
     <!-- Progressive Enhancements : END -->
 
 </head>
-<!--
-	The email background color (#222222) is defined in three places:
-	1. body tag: for most email clients
-	2. center tag: for Gmail and Inbox mobile apps and web versions of Gmail, GSuite, Inbox, Yahoo, AOL, Libero, Comcast, freenet, Mail.ru, Orange.fr
-	3. mso conditional: For Windows 10 Mail
--->
-<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;" class="email-bg">
-    <!-- Visually Hidden Preheader Text : BEGIN -->
-    <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #373637;" class="email-bg">
+  <center role="article" aria-roledescription="email" lang="en" style="width: 100%; background-color: #373637;" class="email-bg">
+    <!--[if mso | IE]>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #373637;" class="email-bg">
+    <tr>
+    <td>
+    <![endif]-->
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="max-height:0; overflow:hidden; mso-hide:all;" aria-hidden="true">
             (Optional) This text will appear in the inbox preview, but not the email body. It can be used to supplement the email subject line or even summarize the email's contents. Extended text preheaders (~490 characters) seems like a better UX for anyone using a screenreader or voice-command apps like Siri to dictate the contents of an email. If this text is not included, email clients will automatically populate it using the text (including image alt text) at the start of the email's body.
-    </div>
-    <!-- Visually Hidden Preheader Text : END -->
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
 
-    <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
-    <!-- Preview Text Spacing Hack : BEGIN -->
-    <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+        <!-- Create white space after the desired preview text so email clients don’t pull other distracting text into the inbox preview. Extend as necessary. -->
+        <!-- Preview Text Spacing Hack : BEGIN -->
+        <div style="display: none; font-size: 1px; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
             &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
-    </div>
-    <!-- Preview Text Spacing Hack : END -->
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+            &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+        </div>
+        <!-- Preview Text Spacing Hack : END -->
 
-    <!-- Email Body: BEGIN -->
-    <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#373637">
-        <tr>
-            <td align="center" valign="top">
-                <!-- Home: BEGIN -->
-                <table width="100%" border="0" cellspacing="0" cellpadding="0" >
-                    <tr>
-                        <td align="center">
-                            <!-- Table 600px : BEGIN -->
-                            <table width="600" border="0" cellspacing="0" cellpadding="0" class="mobile-shell" bgcolor="#373637">
+        <!-- Email Body : BEGIN -->
+        <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="margin: auto;" class="email-container">
+            <!-- Home: BEGIN -->
+            <tr>
+                <td class="fluid-img" style="font-size: 0pt; line-height: 0pt; text-align: left;">
+                    <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/header.jpg?raw=true" width="600" height="auto" 
+                    alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 600px; height: auto; background: #FEB8B8; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff;">
+                </td>
+            </tr>
+            <!-- Home: END -->
+
+            <!-- Reserve a Table : BEGIN -->
+            <tr>
+                <td style="background-color: #ffffff;" class="darkmode-bg">
+                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <!-- Left Column : BEGIN -->
+                        <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                 <tr>
-                                    <td class="td" style="width:600px; min-width:600px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td class="column" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; vertical-align:top;">
-                                                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                        <tr>
-                                                            <td align="left">
-                                                                <!-- Image: BEGIN -->
-                                                                <table class="center" border="0" cellspacing="0" cellpadding="0" style="text-align:center;">
-                                                                    <tr>
-                                                                        <td class="fluid-img" style="font-size: 0pt; line-height: 0pt; text-align: left;">
-                                                                                    <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/header.jpg?raw=true" width="600" height="auto" 
-                                                                                    alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 600px; height: auto; background: #FEB8B8; font-family: sans-serif; font-size: 16px; line-height: 18px; color: #ffffff;">
-                                                                        </td>
-                                                                    </tr>
-                                                                </table>
-                                                                <!-- Image: END -->
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Table 600px : END -->
-                        </td>
-                    </tr>
-                </table>
-                <!-- Home: END -->
-
-                <!-- Reserve a Table : BEGIN -->
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td align="center">
-                            <!-- Table 600px : BEGIN -->
-                            <table width="600" border="0" cellspacing="0" cellpadding="0" class="mobile-shell" bgcolor="#ffffff">
-                                <tr>
-                                    <td class="td" style="width:600px; min-width:600px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                    <!-- Left Column : BEGIN -->
-                                                <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                <tr>
-                                                                        <td align="center" style="padding: 10px 20px;">
-                                                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                                        <tr>
-                                                                                                <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-1.png?raw=true" width="101" height="auto" alt="Special Menu" border="0" 
-                                                                                                        style="width: 100%; max-width: 101px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                                <td style="font-family: 'Cousine', Arial, sans-serif; text-transform: uppercase; text-decoration: underline; text-align: center; padding-bottom: 10px; color: #620C26;">
-                                                                                                        <p style="font-size: 24px; line-height: 26px;">
-                                                                                                                14 FEB AT 9PM
-                                                                                                        </p>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                                <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                        <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                Lotus Restaurant
-                                                                                                        </p>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                                <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; 
-                                                                                                padding-bottom: 20px; color: #7F7F7F;">
-                                                                                                        <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                Join us for a special evening of romance. We'll be offering a three-course meal and a complimentary glass of champagne. 
-                                                                                                                Plus, live music to set the mood for the perfect date night.
-                                                                                                        </p>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <!-- Button : BEGIN -->
-                                                                                        <tr>
-                                                                                                <td align="center" style="padding-bottom: 20px;">
-                                                                                                        <table cellpadding="0" cellspacing="0" border="0">
-                                                                                                                <tr>
-                                                                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 
-                                                                                                                        padding: 10px 20px; background-color: #8F183C; color: #ffffff;">    
-                                                                                                                                <span style="text-decoration: none; color: #ffffff;">
-                                                                                                                                        <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-                                                                                                                                                <span>
-                                                                                                                                                        Reserve a Table
-                                                                                                                                                </span>
-                                                                                                                                        </a>
-                                                                                                                                </span>
-                                                                                                                        </td>
-                                                                                                                </tr>
-                                                                                                        </table>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <!-- Button : END -->
-                                                                                </table>
-                                                                        </td>
-                                                                </tr>
-                                                        </table>
-                                                </th>
-                                                <!-- Left Column : END -->
-                                                <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
-                                                <!-- Right Column : BEGIN -->
-                                                <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                <tr>
-                                                                        <td class="center pb-20" style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                                <img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/img-1.png?raw=true" 
-                                                                                width="300" height="300" border="0" alt="">
-                                                                        </td>
-                                                                </tr>
-                                                        </table>
-                                                </th>
-                                                <!-- Right Column : END -->
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Table 600px : END -->
-                        </td>
-                    </tr>
-                </table>
-                <!-- Reserve a Table : END -->
-
-                <!-- Menu : BEGIN -->
-                <table width="100%" border="0" cellspacing="0" cellpadding="0" >
-                    <tr>
-                        <td align="center">
-                            <!-- Table 600px : BEGIN -->
-                            <table width="600" border="0" cellspacing="0" cellpadding="0" class="mobile-shell" bgcolor="#FFE9E9">
-                                <tr>
-                                    <td class="td" style="width:600px; min-width:600px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
-                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                            <!-- Heading : BEGIN -->
-                                            <tr>
-                                                    <td style="padding: 20px 0;">
-                                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                    <tr>
-                                                                            <td style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 20px;">
-                                                                                    <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-2.png?raw=true" 
-                                                                                    width="101" height="101" border="0" alt="">
-                                                                            </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                            <td style="font-family: 'Cousine', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 20px; color: #620C26;">
-                                                                                    <h2 style="font-size: 24px; font-weight: normal;">
-                                                                                            Special Menu
-                                                                                    </h2>
-                                                                            </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                            <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; padding: 0 40px 0; color: #62530B;">
-                                                                                    <p>
-                                                                                            Make this Valentine's Day extra special with our specially crafted Valentine's Day menu.
-                                                                                    </p>
-                                                                            </td>
-                                                                    </tr>
-                                                            </table>
-                                                    </td>
-                                            </tr>
-                                            <!-- Heading : END -->
-
-                                            <!-- 3 Columns : BEGIN -->
-                                            <tr>
-                                                    <td align="center" style="padding-bottom: 20px;">
-                                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                    <tr>
-                                                                            <!-- Column 1 : BEGIN -->
-                                                                            <th class="column" width="185" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                                            <tr>
-                                                                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/entree.png?raw=true"
-                                                                                                            width="184" height="184" border="0" alt="">
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; padding-bottom: 5px; color: #620C26;">
-                                                                                                            <h3 style="font-size: 20px; line-height: 22px;">
-                                                                                                                    Entree&nbsp;
-                                                                                                            </h3>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                    Creamy tomato soup&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                    Baby greens salad&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                    Seared scallops&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                    </table>
-                                                                            </th>
-                                                                            <!-- Column 1 : END -->
-
-                                                                            <th class="column-empty" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
-
-                                                                            <!-- Column 2 : BEGIN -->
-                                                                            <th class="column" width="185" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                                            <tr>
-                                                                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/main.png?raw=true"
-                                                                                                            width="184" height="184" border="0" alt="">
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; padding-bottom: 5px; color: #620C26;">
-                                                                                                            <h3 style="font-size: 20px; line-height: 22px;">
-                                                                                                                    Main&nbsp;
-                                                                                                            </h3>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                        Filet mignon&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                        Mushroom risotto&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                        Pan-seared salmon&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                    </table>
-                                                                            </th>
-                                                                            <!-- Column 2 : END -->
-
-                                                                            <th class="column-empty" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
-
-                                                                            <!-- Column 3 : BEGIN -->
-                                                                            <th class="column" width="185" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                                            <tr>
-                                                                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/dessert.png?raw=true"
-                                                                                                            width="184" height="184" border="0" alt="">
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; padding-bottom: 5px; color: #620C26;">
-                                                                                                            <h3 style="font-size: 20px; line-height: 22px;">
-                                                                                                                    Dessert&nbsp;
-                                                                                                            </h3>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                        Chocolate lava cake&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                        Cheesecake&nbsp;
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
-                                                                                                            <p style="font-size: 14px; line-height: 22px;">
-                                                                                                                        Crème brûlée&nbsp; 
-                                                                                                            </p>
-                                                                                                    </td>
-                                                                                            </tr>
-                                                                                    </table>
-                                                                            </th>
-                                                                            <!-- Column 3 : END -->
-                                                                    </tr>
-                                                            </table>
-                                                    </td>
-                                            </tr>
-                                            <!-- 3 Columns : END -->
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Table 600px : END -->
-                        </td>
-                    </tr>
-                </table>
-                <!-- Menu : END -->
-
-                <!-- Reservation : BEGIN -->
-                <table width="100%" border="0" cellspacing="0" cellpadding="0" >
-                    <tr>
-                        <td align="center">
-                            <!-- Table 600px : BEGIN -->
-                            <table width="600" border="0" cellspacing="0" cellpadding="0" class="mobile-shell" bgcolor="#FFE9E9">
-                                <tr>
-                                    <td class="td" style="width:600px; min-width:600px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
-                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                            <tr>
-                                                <td align="center" style="padding: 0 0 20px;">
-                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                        <tr>
-                                                                <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                        <img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-3.png?raw=true"
-                                                                        width="101" height="101" border="0" alt="">
-                                                                </td>
-                                                        </tr>
-                                                        <tr>
-                                                                <td style="font-family: 'Cousine', Arial, sans-serif;  line-height: 22px; text-align: center; padding: 0 10px 10px; 
-                                                                color: #620C26;">
-                                                                        <h2 style="font-size: 24px;">
-                                                                                Make a reservation
-                                                                        </h2>
-                                                                </td>
-                                                        </tr>
-                                                        <tr>
-                                                                <td style="font-family: 'Cousine', Arial, sans-serif;  line-height: 22px; text-align: center; padding-bottom: 20px; 
-                                                                color: #363636;">
-                                                                        <p style="font-size: 14px;">
-                                                                                Book a table for the special occasion before we run out
-                                                                        </p>
-                                                                </td>
-                                                        </tr>
-                                                        <!-- Button : BEGIN -->
-                                                        <tr>
-                                                                <td align="center">
-                                                                        <table cellpadding="0" cellspacing="0" border="0">
-                                                                                <tr>
-                                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 
-                                                                                        padding: 10px 20px; background-color: #8F183C; color: #ffffff;">    
-                                                                                                <span style="text-decoration: none; color: #ffffff;">
-                                                                                                        <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-                                                                                                                <span>
-                                                                                                                        Reserve a Table
-                                                                                                                </span>
-                                                                                                        </a>
-                                                                                                </span>
-                                                                                        </td>
-                                                                                </tr>
-                                                                        </table>
-                                                                </td>
-                                                        </tr>
-                                                        <!-- Button : END -->
-                    </table>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Table 600px : END -->
-                        </td>
-                    </tr>
-                </table>
-                <!-- Reservation : END -->
-
-                <!-- Karaoke : BEGIN -->
-                <table width="100%" border="0" cellspacing="0" cellpadding="0" >
-                    <tr>
-                        <td align="center">
-                            <!-- Table 600px : BEGIN -->
-                            <table width="600" border="0" cellspacing="0" cellpadding="0" class="mobile-shell" bgcolor="#ffffff">
-                                <tr>
-                                    <td class="td" style="width:600px; min-width:600px; font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;">
+                                    <td align="center" style="padding: 10px 20px;">
                                         <table cellpadding="0" cellspacing="0" border="0" width="100%">
                                             <tr>
-                                                <!-- Left Column : BEGIN -->
-                                                <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                    <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                            <tr>
-                                                                <td class="center pt-20" style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                    <img class="fluid-img" src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/img-2.png?raw=true" 
-                                                                    width="300" height="300" border="0" alt="">
-                                                                </td>
-                                                            </tr>
-                                                    </table>
-                                                </th>
-                                                <!-- Left Column : END -->
-                                                <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
-                                                <!-- Right Column : BEGIN -->
-                                                <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
-                                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                <tr>
-                                                                        <td align="center" style="padding: 10px">
-                                                                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                                                                        <tr>
-                                                                                                <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-4.png?raw=true"
-                                                                                                        width="101" height="101" border="0" alt="">
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                                <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 24px; line-height: 22px; text-decoration: underline; 
-                                                                                                text-align: center; padding-bottom: 10px; color: #620C26;">
-                                                                                                        <p>
-                                                                                                                Special Karaoke
-                                                                                                        </p>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                                <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; padding-bottom: 10px; 
-                                                                                                color: #62530B;">
-                                                                                                        <p>
-                                                                                                                Romantic Gateway Music
-                                                                                                        </p>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                                <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
-                                                                                                padding-bottom: 20px; color: #7F7F7F;">
-                                                                                                        <p>
-                                                                                                                Sing your heart out this Valentine's Day at our restaurant with our special karaoke event!
-                                                                                                        </p>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <!-- Button : BEGIN -->
-                                                                                        <tr>
-                                                                                                <td align="center">
-                                                                                                        <table cellpadding="0" cellspacing="0" border="0">
-                                                                                                                <tr>
-                                                                                                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 
-                                                                                                                        padding: 10px 20px; background-color: #8F183C; color: #ffffff;">    
-                                                                                                                                <span style="text-decoration: none; color: #ffffff;">
-                                                                                                                                        <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
-                                                                                                                                                <span>
-                                                                                                                                                        Reserve a Table
-                                                                                                                                                </span>
-                                                                                                                                        </a>
-                                                                                                                                </span>
-                                                                                                                        </td>
-                                                                                                                </tr>
-                                                                                                        </table>
-                                                                                                </td>
-                                                                                        </tr>
-                                                                                        <!-- Button : END -->
-                                                                                </table>
-                                                                        </td>
-                                                                </tr>
-                                                        </table>
-                                                </th>
-                                                <!-- Right Column : END -->
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                            <!-- Table 600px : END -->
-                        </td>
-                    </tr>
-                </table>
-                <!-- Karaoke : END -->
-
-                <!-- Footer : BEGIN -->
-                <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                    <tr>
-                        <td align="center">
-                            <table cellpadding="0" cellspacing="0" border="0" width="600" bgcolor="#E7E7E7" class="mobile-shell">
-                                <tr>
-                                    <td class="td" style="width: 600px; min-width: 600px; font-size: 0pt; line-height: 0pt; margin: 0; padding: 0; Margin: 0">
-                                        <table cellpadding="0" cellspacing="0" border="0" width="100%">
-                                            <tr>
-                                                <td align="center" style="padding: 30px 0 15px;">
-                                                    <table cellpadding="0" cellspacing="0" border="0">
-                                                        <tr>
-                                                            <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-instagram.png?raw=true"
-                                                                width="38" height="38" border="0" alt="">
-                                                            </td>
-                                                            <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-facebook.png?raw=true"
-                                                                width="38" height="38" border="0" alt="">
-                                                            </td>
-                                                            <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-twitter.png?raw=true"
-                                                                width="38" height="38" border="0" alt="">
-                                                            </td>
-                                                            <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
-                                                                <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-google-maps.png?raw=true"
-                                                                width="38" height="38" border="0" alt="">
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                <td style="font-size: 0pt; line-height: 0pt; padding-bottom: 10px; text-align: center;">
+                                                    <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-1.png?raw=true" width="101" height="auto" alt="Special Menu" border="0" 
+                                                    style="width: 100%; max-width: 101px; height: auto; background: #ffffff; font-family: sans-serif; font-size: 15px; line-height: 15px; color: #555555; margin: auto; display: block;" class="g-img">
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="font-family: 'Cousine', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 30px; color: #7F7F7F;">
-                                                    <p style="font-size: 14px;">
-                                                        &copy; 2022 Lotus Sushi Bar, LLC. All rights reserved.
+                                                <td style="font-family: 'Cousine', Arial, sans-serif; text-transform: uppercase; text-decoration: underline; text-align: center; padding-bottom: 10px; color: #620C26;">
+                                                    <p style="font-size: 24px; line-height: 26px;">
+                                                        14 FEB AT 9PM
                                                     </p>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                    <p style="font-size: 14px; line-height: 22px;">
+                                                        Lotus Restaurant
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; 
+                                                padding-bottom: 20px; color: #7F7F7F;">
+                                                    <p style="font-size: 14px; line-height: 22px;">
+                                                        Join us for a special evening of romance. We'll be offering a three-course meal and a complimentary glass of champagne. 
+                                                        Plus, live music to set the mood for the perfect date night.
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <!-- Button : BEGIN -->
+                                            <tr>
+                                                <td align="center" style="padding-bottom: 20px;">
+                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                        <tr>
+                                                            <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 
+                                                            padding: 10px 20px; background-color: #8F183C; color: #ffffff;">    
+                                                                <span style="text-decoration: none; color: #ffffff;">
+                                                                    <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                                        <span>
+                                                                            Reserve a Table
+                                                                        </span>
+                                                                    </a>
+                                                                </span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <!-- Button : END -->
                                         </table>
                                     </td>
                                 </tr>
                             </table>
-                        </td>
+                        </th>
+                        <!-- Left Column : END -->
+                        <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
+                        <!-- Right Column : BEGIN -->
+                        <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                <tr>
+                                    <td class="center pb-20" style="font-size: 0pt; line-height: 0pt; padding: 10px; text-align: center;">
+                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/img-1.png?raw=true" width="300" height="auto" 
+                                        alt="Lotus Restaurant " border="0" style="width: 100%; max-width: 300px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                        font-size: 16px; line-height: 18px; color: #ffffff;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </th>
+                    <!-- Right Column : END -->
+                    </table>
+                </td>
+            </tr>
+            <!-- Reserve a Table : END -->
+
+            <!-- Menu : BEGIN -->
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFE9E9">
+                        <tr>
+                            <td style="font-size: 0pt; line-height: 0pt; text-align: center; padding-bottom: 20px;">
+                                <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-2.png?raw=true" width="101" height="auto" 
+                                alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 101px; height: auto; background: #FFE9E9; font-family: sans-serif; 
+                                font-size: 16px; line-height: 18px; color: #ffffff;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: 'Cousine', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 20px; color: #620C26;">
+                                <h2 style="font-size: 24px; font-weight: normal;">
+                                    Special Menu
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; padding: 0 40px 0; color: #62530B;">
+                                <p>
+                                    Make this Valentine's Day extra special with our specially crafted Valentine's Day menu.
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="padding-bottom: 20px;">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <!-- Column 1 : BEGIN -->
+                                        <th class="column" width="185" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/entree.png?raw=true" width="184" height="auto" 
+                                                        alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 184px; height: auto; background: #FFE9E9; font-family: sans-serif; 
+                                                        font-size: 16px; line-height: 18px; color: #ffffff;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; padding-bottom: 5px; color: #620C26;">
+                                                        <h3 style="font-size: 20px; line-height: 22px;">
+                                                            Entree&nbsp;
+                                                        </h3>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Creamy tomato soup&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Baby greens salad&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Seared scallops&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <!-- Column 1 : END -->
+
+                                        <th class="column-empty" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
+
+                                        <!-- Column 2 : BEGIN -->
+                                        <th class="column" width="185" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/main.png?raw=true" width="184" height="auto" 
+                                                        alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 184px; height: auto; background: #FFE9E9; font-family: sans-serif; 
+                                                        font-size: 16px; line-height: 18px; color: #ffffff;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; padding-bottom: 5px; color: #620C26;">
+                                                        <h3 style="font-size: 20px; line-height: 22px;">
+                                                            Main&nbsp;
+                                                        </h3>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Filet mignon&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Mushroom risotto&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Pan-seared salmon&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <!-- Column 2 : END -->
+
+                                        <th class="column-empty" width="10" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
+
+                                        <!-- Column 3 : BEGIN -->
+                                        <th class="column" width="185" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/dessert.png?raw=true" width="184" height="auto" 
+                                                        alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 184px; height: auto; background: #FFE9E9; font-family: sans-serif; 
+                                                        font-size: 16px; line-height: 18px; color: #ffffff;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; padding-bottom: 5px; color: #620C26;">
+                                                        <h3 style="font-size: 20px; line-height: 22px;">
+                                                            Dessert&nbsp;
+                                                        </h3>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Chocolate lava cake&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Cheesecake&nbsp;
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; text-align: center; color: #62530B;">
+                                                        <p style="font-size: 14px; line-height: 22px;">
+                                                            Crème brûlée&nbsp; 
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </th>
+                                        <!-- Column 3 : END -->
+                                    </tr>
+                                </table>
+                            </td>
                     </tr>
-                </table>
-                <!-- Footer : END -->
-            </td>
-        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Menu : END -->
+
+            <!-- Reservation : BEGIN -->
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFE9E9">
+                        <tr>
+                            <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-3.png?raw=true" width="101" height="auto" 
+                                alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 101px; height: auto; background: #FFE9E9; font-family: sans-serif; 
+                                font-size: 16px; line-height: 18px; color: #ffffff;">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: 'Cousine', Arial, sans-serif;  line-height: 22px; text-align: center; padding: 0 10px 10px; 
+                            color: #620C26;">
+                                <h2 style="font-size: 24px;">
+                                    Make a reservation
+                                </h2>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: 'Cousine', Arial, sans-serif;  line-height: 22px; text-align: center; padding-bottom: 20px; 
+                            color: #363636;">
+                                <p style="font-size: 14px;">
+                                    Book a table for the special occasion before we run out
+                                </p>
+                            </td>
+                        </tr>
+                        <!-- Button : BEGIN -->
+                        <tr>
+                            <td align="center" style="padding-bottom: 20px;">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 
+                                        padding: 10px 20px; background-color: #8F183C; color: #ffffff;">    
+                                            <span style="text-decoration: none; color: #ffffff;">
+                                                <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                    <span>
+                                                        Reserve a Table
+                                                    </span>
+                                                </a>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <!-- Button : END -->
+                    </table>
+                </td>
+            </tr>
+            <!-- Reservation : END -->
+
+            <!-- Karaoke : BEGIN -->
+            <tr>
+                <td>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                        <tr>
+                            <!-- Left Column : BEGIN -->
+                            <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/img-2.png?raw=true" width="300" height="auto" 
+                                        alt="Lotus Restaurant " border="0" style="width: 100%; max-width: 300px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                        font-size: 16px; line-height: 18px; color: #ffffff;">
+                                        &nbsp;
+                                        <!--[if gte mso 12]><br /> <![endif]-->
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Left Column : END -->
+                            <th class="column-empty" width="1" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal;"></th>
+                            <!-- Right Column : BEGIN -->
+                            <th class="column" width="300" style="font-size: 0pt; font-weight: normal; line-height: 0pt; margin: 0; padding: 0;">
+                                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                    <tr>
+                                        <td align="center" style="padding: 10px">
+                                            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                                                <tr>
+                                                    <td style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                                        <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/icon-4.png?raw=true" width="101" height="auto" 
+                                                        alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 101px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                                        font-size: 16px; line-height: 18px; color: #ffffff;">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 24px; line-height: 22px; text-decoration: underline; 
+                                                    text-align: center; padding-bottom: 10px; color: #620C26;">
+                                                        <p>
+                                                            Special Karaoke
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; padding-bottom: 10px; 
+                                                    color: #62530B;">
+                                                        <p>
+                                                            Romantic Gateway Music
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 14px; line-height: 22px; text-align: center; 
+                                                    padding-bottom: 20px; color: #7F7F7F;">
+                                                        <p>
+                                                            Sing your heart out this Valentine's Day at our restaurant with our special karaoke event!
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                                <!-- Button : BEGIN -->
+                                                <tr>
+                                                    <td align="center">
+                                                        <table cellpadding="0" cellspacing="0" border="0">
+                                                            <tr>
+                                                                <td style="font-family: 'Cousine', Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: center; 
+                                                                padding: 10px 20px; background-color: #8F183C; color: #ffffff;">    
+                                                                    <span style="text-decoration: none; color: #ffffff;">
+                                                                        <a href="#" target="_blank" style="text-decoration: none; color: #ffffff;">
+                                                                            <span>
+                                                                                Reserve a Table
+                                                                            </span>
+                                                                        </a>
+                                                                    </span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <!-- Button : END -->
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </th>
+                            <!-- Right Column : END -->
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Karaoke : END -->
+
+            <!-- Footer : BEGIN -->
+            <tr>
+                <td>
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%" bgcolor="#FFE9E9">
+                        <tr>
+                            <td align="center" style="padding: 30px 0 15px;">
+                                <table cellpadding="0" cellspacing="0" border="0">
+                                    <tr>
+                                        <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-instagram.png?raw=true" width="38" height="auto" 
+                                            alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 38px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                            font-size: 16px; line-height: 18px; color: #ffffff;">
+                                        </td>
+                                        <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-facebook.png?raw=true" width="38" height="auto" 
+                                            alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 38px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                            font-size: 16px; line-height: 18px; color: #ffffff;">
+                                        </td>
+                                        <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-twitter.png?raw=true" width="38" height="auto" 
+                                            alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 38px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                            font-size: 16px; line-height: 18px; color: #ffffff;">
+                                        </td>
+                                        <td width="42" style="font-size: 0pt; line-height: 0pt; text-align: center;">
+                                            <img src="https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/social-icon-google-maps.png?raw=true" width="38" height="auto" 
+                                            alt="Valentine's Day Special Promotion" border="0" style="width: 100%; max-width: 38px; height: auto; background: #ffffff; font-family: sans-serif; 
+                                            font-size: 16px; line-height: 18px; color: #ffffff;">
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: 'Cousine', Arial, sans-serif; line-height: 22px; text-align: center; padding-bottom: 30px; color: #7F7F7F;">
+                                <p style="font-size: 14px;">
+                                    &copy; 2022 Lotus Sushi Bar, LLC. All rights reserved.
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <!-- Footer : END -->
+        </table>
+	    <!-- Email Body : EMD -->
+    <!--[if mso | IE]>
+    </td>
+    </tr>
     </table>
-    <!-- Email Body : END -->
+    <![endif]-->
+    </center>
 </body>
 </html>

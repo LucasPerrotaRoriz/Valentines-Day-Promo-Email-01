@@ -3,7 +3,7 @@
 # My Awesome Project
 This is a email made with responsive design for a japanese and karaoke restaurant called Lotus.
 
-<a href="https://lucasperrotaroriz.github.io/Real-State-Landing-Page-01/" target="_blank">**Link to project:** </a>
+<a href="https://lucasperrotaroriz.github.io/Valentines-Day-Promo-Email-01/" target="_blank">**Link to project:** </a>
 
 ## Desktop View
 ![preview img](https://github.com/LucasPerrotaRoriz/Valentines-Day-Promo-Email-01/blob/main/images/valentine-1.gif?raw=true)
